@@ -1,0 +1,68 @@
+1) Matplotlib 라이브러리 기본 사용법
+- plt.savefig('my_fogure.jpg") : 그림 파일 저장
+- from google.colab import files / files.download('my_figure.jpg') : 파일 다운로드
+
+2) Matplotlib 인터페이스(실습환경)
+-2가지 스타일 , 적재적소 활용
+_MATLAB_ : 단순한 그림, 편리 / 수치해석 및 프로그래밍 환경을 제공하는 공학용 소프트웨어
+_객체지향스타일_: 복잡한 그림, 상세안 설정 가능, 파이썬 프로그램 친화적 / 플롯 그리드를 새성, Ax는 두 개의 축 객체읭 배열을 생성
+
+-plt.figure() : 그림이 달길 틀 생성
+-x=np.linspace(-10,10,100) : 첫번쨰 패널 생성, 현재 축 생성
+-plt.subplot(2,1,1) / plt.plot(x,np.sin(x)) : 첫번쨰 패널에 사인그래프 생성
+- plt.subplot(2,1,2) / plt.plot(x,np.cos(x)); : 두번째 패널에 코사인 그래프 생성
+
+__[빅데이터 시각화]__
+
+1) 기본 선그림 작성
+
+- y=f(x) 시각화 한 것
+-% matplotlib inpline/import matplotlib.pyplot as plt/ plt.style.use('seaborn-whitegrid')/imort numpy as np
+-(1) 축 만들기 : fig=plt.figure()
+-(2) 객체 반환하여 함수로 : fig.suptle("Example1:Line Plot")
+-(3) 축 생성 : ax=plt.axes()
+plt.plt(x,np.sin(x))
+plt.plot(x,np.cos(x));
+
+-(1) 축과 라인 변경하기
+-색상 : plt.plot(x,x+0,linestyle='solid') / green, syan, black, red
+-축의 점위 : plt.plot(x,np.cos(x))
+-축의 스케일 변겅 : plt.plot(x,np.exp(-x));
+-(2) 플럿 조정
+-축의 레이블 추가 : plt.plot(x.cos(x))
+-범례 추가 : plt.plot(x,sinx(x),'-g',label='sin(x)')
+
+
+2) 기본 점그림 작성
+
+-점과 점 사이의 선후관계나 관련성이 없는 경우 산점도 이용
+-x=np.linspace(0,10,25) : 세번째 인수로 마커(점의 모양) 지정
+-'o': 원혀의 점/ '.' : 더 작은 원형의 점
+-선그림에 마커를 표시하면 산점도로 변환
+-선의 종류, 마커의 종류, 색상을 나타내는 코드 : plt.plot(x,np.sin(x).'-og');
+
+-더 강력한 메쏘드: plt.scatter . 섬세하게 조정 가능
+- 다중서브플롯
+-컬러의 값은 0~1 사이
+
+
+
+__[다중서브플롯]__
+
+-그리드를 지정하는 인수를 전달
+- 인수: 해의 개수, 열의 개수, 서브플롯 번호
+
+1) subplot() 함수
+-서브플롯을 각각 생성하는 함수
+- 인덱스 결과 : 좌상다넹서 우하단으로 이어짐
+- 파이썬 for 문-> ''plt.subplotes()''
+- 더 복잡한 다중플롯
+- 0.5는 서브플롯의 가우네르 의미
+-다중히스토그램 : 산점도로 표현된 그래프와 x축, y축을 따라 히스토그램을 그려서 데이터의 분포를 파악하는 데 유용한 그림
+
+2) subplots() 함수
+-서브플롯을 한꺼번에 생성하는 하뭇
+
+3) GriSpec() 함수
+-‘ok’는 검은 색상의 점으로 표시하라는 뜻
+-복잡한 형태의 서브플롯을 생성하는 함수
